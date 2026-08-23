@@ -852,13 +852,13 @@
         
         <!-- 3 Morning Affirmations / Whispers -->
         <div class="affirmation-pills-row" id="affirmations-row">
-          <button class="affirm-pill" onclick="triggerAffirmation('🌸 You light up every room you enter.')">
+          <button class="affirm-pill" onclick="triggerAffirmation('🌸 You light up every room you enter.', event)">
             <span>🌸</span> Smile First
           </button>
-          <button class="affirm-pill" onclick="triggerAffirmation('☕ Sending you a warm cup of coffee and a million hugs!')">
+          <button class="affirm-pill" onclick="triggerAffirmation('☕ Sending you a warm cup of coffee and a million hugs!', event)">
             <span>☕</span> Warm Hug
           </button>
-          <button class="affirm-pill" onclick="triggerAffirmation('💫 Remember that you are deeply loved, always.')">
+          <button class="affirm-pill" onclick="triggerAffirmation('💫 Remember that you are deeply loved, always.', event)">
             <span>💫</span> Always Loved
           </button>
         </div>
@@ -1332,7 +1332,7 @@
     const toast = document.getElementById("affirm-toast");
     let toastTimeout = null;
 
-    function triggerAffirmation(text) {
+    function triggerAffirmation(text, ev) {
       initAudio();
       playSoftHeartTone();
       
@@ -1344,10 +1344,15 @@
         toast.classList.remove("show");
       }, 3200);
 
-      // Trigger a small burst
-      const btn = event.currentTarget;
-      const rect = btn.getBoundingClientRect();
-      triggerConfettiBurst(rect.left + rect.width / 2, rect.top, 15);
+      // Trigger a small burst from the button
+      const currentEv = ev || window.event;
+      const btn = currentEv ? currentEv.currentTarget : null;
+      if (btn && btn.getBoundingClientRect) {
+        const rect = btn.getBoundingClientRect();
+        triggerConfettiBurst(rect.left + rect.width / 2, rect.top, 15);
+      } else {
+        triggerConfettiBurst(width / 2, height / 2, 15);
+      }
     }
 
     // Send Kiss / Love Back Button
