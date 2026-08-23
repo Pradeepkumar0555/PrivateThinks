@@ -13,12 +13,14 @@
   <meta property="og:description" content="Wishing the sweetest dreams to my favorite person 😴💫">
   <meta property="og:type" content="website">
 
-  <!-- Google Fonts: Cormorant Garamond, Great Vibes, Playfair Display, Plus Jakarta Sans -->
+  <!-- High-speed non-blocking Google Fonts with fallback -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  </noscript>
 
   <style>
     /* ==========================================================================
@@ -104,16 +106,19 @@
       z-index: 1;
     }
 
-    /* Ambient Night Glows */
+    /* Ambient Night Glows (GPU optimized) */
     .night-ambient {
       position: fixed;
-      width: 600px;
-      height: 600px;
+      width: 450px;
+      height: 450px;
       border-radius: 50%;
-      filter: blur(120px);
+      filter: blur(70px);
+      -webkit-filter: blur(70px);
       pointer-events: none;
       z-index: 0;
-      opacity: 0.45;
+      opacity: 0.35;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
       animation: floatNightAura 20s ease-in-out infinite alternate;
     }
 
@@ -757,12 +762,22 @@
        ========================================================================== */
     @media (max-width: 640px) {
       body {
-        padding: 1.5rem 0.9rem;
+        padding: 1.2rem 0.8rem;
+      }
+
+      .night-ambient {
+        width: 280px;
+        height: 280px;
+        filter: blur(40px);
+        -webkit-filter: blur(40px);
+        opacity: 0.25;
       }
 
       .glass-card {
-        padding: 2.2rem 1.4rem;
-        border-radius: 26px;
+        padding: 2rem 1.25rem;
+        border-radius: 24px;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
       }
 
       .main-title {
@@ -1153,7 +1168,7 @@
     });
 
     const particles = [];
-    const maxParticles = window.innerWidth < 768 ? 40 : 70;
+    const maxParticles = window.innerWidth < 768 ? 16 : 45;
 
     class NightParticle {
       constructor(isConfetti = false, originX = null, originY = null) {
@@ -1361,17 +1376,17 @@
     let lastMoveTime = 0;
     window.addEventListener("pointermove", (e) => {
       const now = Date.now();
-      if (now - lastMoveTime > 120 && Math.random() < 0.45) {
+      if (now - lastMoveTime > 220 && Math.random() < 0.35) {
         lastMoveTime = now;
         spawnTapStar(e.clientX, e.clientY);
       }
-    });
+    }, { passive: true });
 
     window.addEventListener("pointerdown", (e) => {
       if (e.target.closest("button") || e.target.closest("a")) return;
       spawnTapStar(e.clientX, e.clientY);
       playSoftStarTone();
-    });
+    }, { passive: true });
 
     /**
      * ============================================================================
