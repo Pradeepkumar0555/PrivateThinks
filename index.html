@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Good Morning, My Love ❤️</title>
-  
+
   <!-- Meta tags for social sharing / previews -->
   <meta name="description" content="A special, romantic good morning gift made just for you.">
   <meta name="theme-color" content="#ffeef2">
@@ -15,7 +16,9 @@
   <!-- Google Fonts: Cormorant Garamond (Luxury Serif), Great Vibes & Alex Brush (Romantic Script), Plus Jakarta Sans (Modern Clean) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <style>
     /* ==========================================================================
@@ -26,33 +29,33 @@
       --bg-gradient-mid: #ffe4e9;
       --bg-gradient-warm: #fef0e4;
       --bg-gradient-end: #ffd6df;
-      
+
       --rose-primary: #e04b68;
       --rose-dark: #b82342;
       --rose-light: #ff758f;
       --rose-glow: rgba(224, 75, 104, 0.4);
       --rose-soft: rgba(255, 117, 143, 0.15);
-      
+
       --gold-accent: #d4a373;
       --gold-light: #fef5ea;
       --gold-glow: rgba(212, 163, 115, 0.4);
-      
+
       --text-dark: #3d232a;
       --text-muted: #7d5a63;
       --text-highlight: #c2274d;
-      
+
       --glass-bg: rgba(255, 255, 255, 0.72);
       --glass-border: rgba(255, 255, 255, 0.85);
       --glass-inner-border: rgba(255, 220, 230, 0.5);
-      --glass-shadow: 0 25px 60px -15px rgba(219, 79, 110, 0.18), 
-                      0 12px 30px -10px rgba(100, 20, 40, 0.08),
-                      inset 0 1px 2px rgba(255, 255, 255, 0.9);
-      
+      --glass-shadow: 0 25px 60px -15px rgba(219, 79, 110, 0.18),
+        0 12px 30px -10px rgba(100, 20, 40, 0.08),
+        inset 0 1px 2px rgba(255, 255, 255, 0.9);
+
       --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
       --font-display: 'Playfair Display', Georgia, serif;
       --font-script: 'Great Vibes', 'Alex Brush', cursive;
       --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      
+
       --radius-card: 32px;
       --radius-sm: 16px;
       --radius-full: 9999px;
@@ -61,14 +64,17 @@
     /* ==========================================================================
        BASE & RESET
        ========================================================================== */
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       -webkit-tap-highlight-color: transparent;
     }
 
-    html, body {
+    html,
+    body {
       width: 100%;
       min-height: 100vh;
       overflow-x: hidden;
@@ -127,9 +133,17 @@
     }
 
     @keyframes floatAura {
-      0% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(40px, 30px) scale(1.1); }
-      100% { transform: translate(-30px, 40px) scale(0.95); }
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(40px, 30px) scale(1.1);
+      }
+
+      100% {
+        transform: translate(-30px, 40px) scale(0.95);
+      }
     }
 
     /* Audio / Sound Toggle Button */
@@ -167,8 +181,15 @@
     }
 
     @keyframes soundPulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
     }
 
     /* ==========================================================================
@@ -205,21 +226,27 @@
       left: -150%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.35) 50%,
-        transparent 100%
-      );
+      background: linear-gradient(90deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0.35) 50%,
+          transparent 100%);
       transform: skewX(-25deg);
       pointer-events: none;
       animation: shimmerSweep 8s infinite 3s;
     }
 
     @keyframes shimmerSweep {
-      0% { left: -150%; }
-      30% { left: 150%; }
-      100% { left: 150%; }
+      0% {
+        left: -150%;
+      }
+
+      30% {
+        left: 150%;
+      }
+
+      100% {
+        left: 150%;
+      }
     }
 
     @keyframes cardEntrance {
@@ -227,6 +254,7 @@
         opacity: 0;
         transform: translateY(35px) scale(0.96);
       }
+
       100% {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -257,8 +285,13 @@
     }
 
     @keyframes rotateSun {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
     /* ==========================================================================
@@ -291,11 +324,27 @@
     }
 
     @keyframes heartBeat {
-      0%, 100% { transform: scale(1); }
-      14% { transform: scale(1.22); }
-      28% { transform: scale(1); }
-      42% { transform: scale(1.15); }
-      70% { transform: scale(1); }
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      14% {
+        transform: scale(1.22);
+      }
+
+      28% {
+        transform: scale(1);
+      }
+
+      42% {
+        transform: scale(1.15);
+      }
+
+      70% {
+        transform: scale(1);
+      }
     }
 
     .subtitle {
@@ -316,9 +365,17 @@
     }
 
     @keyframes sparkleRotate {
-      0% { transform: rotate(0deg) scale(0.9); }
-      50% { transform: rotate(15deg) scale(1.2); }
-      100% { transform: rotate(-10deg) scale(1); }
+      0% {
+        transform: rotate(0deg) scale(0.9);
+      }
+
+      50% {
+        transform: rotate(15deg) scale(1.2);
+      }
+
+      100% {
+        transform: rotate(-10deg) scale(1);
+      }
     }
 
     /* Romantic Heartfelt Message Body */
@@ -396,8 +453,8 @@
       border-radius: var(--radius-full);
       cursor: pointer;
       box-shadow: 0 10px 25px rgba(224, 75, 104, 0.38),
-                  0 4px 10px rgba(0, 0, 0, 0.05),
-                  inset 0 1px 1px rgba(255, 255, 255, 0.35);
+        0 4px 10px rgba(0, 0, 0, 0.05),
+        inset 0 1px 1px rgba(255, 255, 255, 0.35);
       transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
       display: inline-flex;
       align-items: center;
@@ -413,12 +470,10 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.4) 50%,
-        transparent 100%
-      );
+      background: linear-gradient(90deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0.4) 50%,
+          transparent 100%);
       transform: skewX(-20deg);
       transition: left 0.7s ease;
     }
@@ -430,7 +485,7 @@
     .surprise-btn:hover {
       transform: translateY(-4px) scale(1.03);
       box-shadow: 0 16px 35px rgba(224, 75, 104, 0.48),
-                  0 6px 15px rgba(0, 0, 0, 0.08);
+        0 6px 15px rgba(0, 0, 0, 0.08);
       background: linear-gradient(135deg, #ea516f 0%, #e85976 50%, #b81e42 100%);
     }
 
@@ -449,13 +504,16 @@
     }
 
     @keyframes pulseGlow {
-      0%, 100% {
+
+      0%,
+      100% {
         box-shadow: 0 10px 25px rgba(224, 75, 104, 0.38),
-                    0 0 0 0 rgba(224, 75, 104, 0.4);
+          0 0 0 0 rgba(224, 75, 104, 0.4);
       }
+
       50% {
         box-shadow: 0 12px 30px rgba(224, 75, 104, 0.45),
-                    0 0 0 12px rgba(224, 75, 104, 0);
+          0 0 0 12px rgba(224, 75, 104, 0);
       }
     }
 
@@ -485,8 +543,8 @@
       border-radius: calc(var(--radius-card) - 8px);
       padding: 2.2rem 2rem;
       box-shadow: 0 15px 40px -10px rgba(184, 35, 66, 0.15),
-                  0 4px 15px rgba(0, 0, 0, 0.03),
-                  inset 0 0 30px rgba(255, 235, 240, 0.6);
+        0 4px 15px rgba(0, 0, 0, 0.03),
+        inset 0 0 30px rgba(255, 235, 240, 0.6);
       text-align: center;
     }
 
@@ -502,14 +560,19 @@
       margin: -3.4rem auto 1.2rem auto;
       font-size: 1.4rem;
       box-shadow: 0 6px 16px rgba(144, 22, 51, 0.35),
-                  inset 0 1px 2px rgba(255, 255, 255, 0.4);
+        inset 0 1px 2px rgba(255, 255, 255, 0.4);
       border: 2px solid #ffffff;
       animation: sealPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
     }
 
     @keyframes sealPop {
-      0% { transform: scale(0) rotate(-45deg); }
-      100% { transform: scale(1) rotate(0deg); }
+      0% {
+        transform: scale(0) rotate(-45deg);
+      }
+
+      100% {
+        transform: scale(1) rotate(0deg);
+      }
     }
 
     .secret-header {
@@ -660,6 +723,7 @@
         opacity: 0;
         transform: translateY(20px);
       }
+
       100% {
         opacity: 1;
         transform: translateY(0);
@@ -671,6 +735,7 @@
         opacity: 0;
         transform: translateY(-15px);
       }
+
       100% {
         opacity: 1;
         transform: translateY(0);
@@ -691,10 +756,12 @@
         opacity: 1;
         transform: translate(-50%, -50%) scale(0.6) rotate(0deg);
       }
+
       50% {
         opacity: 0.9;
         transform: translate(-50%, -100px) scale(1.2) rotate(15deg);
       }
+
       100% {
         opacity: 0;
         transform: translate(-50%, -180px) scale(1) rotate(-15deg);
@@ -770,11 +837,12 @@
     @media (min-width: 1024px) {
       .glass-card:hover {
         box-shadow: 0 35px 80px -15px rgba(219, 79, 110, 0.22),
-                    0 15px 35px -10px rgba(100, 20, 40, 0.09);
+          0 15px 35px -10px rgba(100, 20, 40, 0.09);
       }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Particle Simulation Canvas -->
@@ -793,7 +861,7 @@
   <!-- Main Gift Card Container -->
   <main class="app-container">
     <article class="glass-card">
-      
+
       <!-- Live Morning Aura Pill -->
       <div class="morning-pill">
         <span class="sun-icon">🌅</span>
@@ -803,7 +871,7 @@
       <!-- Main Heading -->
       <header class="title-wrapper">
         <h1 class="main-title" id="main-title">
-          Good Morning, My Love <span class="heart-beat">❤️</span>
+          Good Morning, My Bacha <span class="heart-beat">❤️</span>
         </h1>
         <p class="subtitle" id="main-subtitle">
           To the most beautiful person in my world <span class="sparkle-icon">✨</span>
@@ -813,7 +881,9 @@
       <!-- Heartfelt Romantic Message -->
       <section class="romantic-message-container">
         <p class="romantic-message" id="romantic-message">
-          As the gentle morning sun paints the world with light, my very first thought finds its way to you. No matter how far apart we might be or what today holds, knowing you are in my life makes every sunrise warmer, brighter, and filled with hope. I hope your day is as radiant, gentle, and wonderful as your smile.
+          As the gentle morning sun paints the world with light, my very first thought finds its way to you. No matter
+          how far apart we might be or what today holds, knowing you are in my life makes every sunrise warmer,
+          brighter, and filled with hope. I hope your day is as radiant, gentle, and wonderful as your smile.
         </p>
 
         <!-- Highlighted Line -->
@@ -841,7 +911,7 @@
               it would be right beside you. 🥰
             </p>
             <p class="secret-signoff" id="surprise-signoff">
-              Have the most amazing day, jaan. ❤️
+              Have the most amazing day, Beta. ❤️
             </p>
           </div>
         </div>
@@ -849,26 +919,28 @@
 
       <!-- Extra Interactive Romantic Features -->
       <footer class="interactive-extras">
-        
+
         <!-- 3 Morning Affirmations / Whispers -->
         <div class="affirmation-pills-row" id="affirmations-row">
           <button class="affirm-pill" onclick="triggerAffirmation('🌸 You light up every room you enter.', event)">
             <span>🌸</span> Smile First
           </button>
-          <button class="affirm-pill" onclick="triggerAffirmation('☕ Sending you a warm cup of coffee and a million hugs!', event)">
+          <button class="affirm-pill"
+            onclick="triggerAffirmation('☕ Sending you a warm cup of coffee and a million hugs!', event)">
             <span>☕</span> Warm Hug
           </button>
-          <button class="affirm-pill" onclick="triggerAffirmation('💫 Remember that you are deeply loved, always.', event)">
+          <button class="affirm-pill"
+            onclick="triggerAffirmation('💫 Remember that you are deeply loved, always.', event)">
             <span>💫</span> Always Loved
           </button>
         </div>
 
         <!-- "Send Love Back" Interactive Counter -->
-        <button class="send-kiss-btn" id="send-kiss-btn">
-          <span>Tap to send love back</span>
-          <span>💋</span>
-          <span class="kiss-counter" id="kiss-count">0</span>
-        </button>
+        //<button class="send-kiss-btn" id="send-kiss-btn">
+          // <span>Tap to send love back</span>
+          // <span>💋</span>
+          // <span class="kiss-counter" id="kiss-count">0</span>
+          // </button>
 
         <!-- Personalized Signature -->
         <p class="footer-note" id="footer-note">
@@ -897,28 +969,28 @@
     const CONFIG = {
       // Girlfriend's name / pet name (e.g. "jaan", "Priya", "Angel", "My Love")
       girlfriendName: "jaan",
-      
+
       // Your name / signoff
       senderName: "Yours Always",
-      
+
       // Main Section Texts
       mainHeading: "Good Morning, My Love ❤️",
       mainSubtitle: "To the most beautiful person in my world ✨",
-      
+
       // Heartfelt paragraph
       romanticMessage: "As the gentle morning sun paints the world with light, my very first thought finds its way to you. No matter how far apart we might be or what today holds, knowing you are in my life makes every sunrise warmer, brighter, and filled with hope. I hope your day is as radiant, gentle, and wonderful as your smile.",
-      
+
       // Highlighted Quote Line
       highlightQuote: "“You are my favourite thought every morning. ❤️”",
-      
+
       // Button text
       buttonText: "Tap for a little surprise ❤️",
       buttonTextRevealed: "Opened with all my love ❤️",
-      
+
       // Surprise Message inside the secret note
       surpriseMessage: "If I could choose one place to be this morning,\nit would be right beside you. 🥰",
       surpriseSignoff: "Have the most amazing day, {name}. ❤️",
-      
+
       // Sound Enabled by default
       soundEnabled: true
     };
@@ -964,7 +1036,7 @@
 
       // Populate text nodes
       if (CONFIG.mainHeading) {
-        document.getElementById("main-title").innerHTML = CONFIG.mainHeading.includes("❤️") 
+        document.getElementById("main-title").innerHTML = CONFIG.mainHeading.includes("❤️")
           ? CONFIG.mainHeading.replace("❤️", '<span class="heart-beat">❤️</span>')
           : `${CONFIG.mainHeading} <span class="heart-beat">❤️</span>`;
       }
@@ -1106,7 +1178,7 @@
 
       reset(isConfetti = false, originX = null, originY = null) {
         this.isConfetti = isConfetti;
-        
+
         if (isConfetti && originX !== null) {
           this.x = originX;
           this.y = originY;
@@ -1256,7 +1328,7 @@
 
     surpriseBtn.addEventListener("click", (e) => {
       initAudio();
-      
+
       const rect = surpriseBtn.getBoundingClientRect();
       const originX = rect.left + rect.width / 2;
       const originY = rect.top + rect.height / 2;
@@ -1266,11 +1338,11 @@
         surpriseRevealBox.classList.add("open");
         surpriseBtn.setAttribute("aria-expanded", "true");
         surpriseBtnText.textContent = CONFIG.buttonTextRevealed;
-        
+
         // Sound and Confetti
         playRomanticChime();
         triggerConfettiBurst(originX, originY, 65);
-        
+
         // Spawn additional floating hearts in staggered waves
         setTimeout(() => triggerConfettiBurst(originX - 60, originY, 25), 250);
         setTimeout(() => triggerConfettiBurst(originX + 60, originY, 25), 500);
@@ -1295,15 +1367,15 @@
     function spawnTapHeart(x, y) {
       const heart = document.createElement("div");
       heart.className = "floating-tap-heart";
-      
+
       const icons = ["❤️", "💖", "🌸", "✨", "💕", "🥰"];
       heart.textContent = icons[Math.floor(Math.random() * icons.length)];
-      
+
       const size = Math.random() * 16 + 18;
       heart.style.fontSize = `${size}px`;
       heart.style.left = `${x}px`;
       heart.style.top = `${y}px`;
-      
+
       document.body.appendChild(heart);
       setTimeout(() => heart.remove(), 1400);
     }
@@ -1335,10 +1407,10 @@
     function triggerAffirmation(text, ev) {
       initAudio();
       playSoftHeartTone();
-      
+
       toast.textContent = text;
       toast.classList.add("show");
-      
+
       if (toastTimeout) clearTimeout(toastTimeout);
       toastTimeout = setTimeout(() => {
         toast.classList.remove("show");
@@ -1364,7 +1436,7 @@
       initAudio();
       kissCount++;
       kissCountEl.textContent = kissCount;
-      
+
       const rect = sendKissBtn.getBoundingClientRect();
       const originX = rect.left + rect.width / 2;
       const originY = rect.top;
@@ -1381,4 +1453,5 @@
     });
   </script>
 </body>
+
 </html>
