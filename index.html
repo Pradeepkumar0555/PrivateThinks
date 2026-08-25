@@ -197,34 +197,58 @@
       }
     }
 
-    /* Switch to Night Wish Button */
-    .switch-page-btn {
+    /* ==========================================================================
+       TOP NAVIGATION & CONTROLS
+       ========================================================================== */
+    .top-nav-bar {
       position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 50;
-      background: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      top: 18px;
+      left: 18px;
+      right: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 60;
+      pointer-events: none;
+    }
+
+    .nav-links-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      pointer-events: auto;
+    }
+
+    .nav-btn {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border: 1px solid var(--glass-border);
       border-radius: var(--radius-full);
-      padding: 8px 16px;
+      padding: 8px 14px;
       font-size: 0.82rem;
       font-weight: 600;
-      color: #7c3aed;
+      color: var(--text-muted);
       text-decoration: none;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 6px;
       box-shadow: 0 4px 15px rgba(224, 75, 104, 0.12);
       transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    .switch-page-btn:hover {
-      transform: translateY(-2px) scale(1.03);
-      background: rgba(255, 255, 255, 0.95);
-      color: #5b21b6;
-      box-shadow: 0 8px 25px rgba(124, 58, 237, 0.25);
+    .nav-btn:hover {
+      transform: translateY(-2px) scale(1.04);
+      background: #ffffff;
+      color: var(--rose-primary);
+      box-shadow: 0 8px 20px rgba(224, 75, 104, 0.2);
+    }
+
+    .nav-btn.active {
+      background: linear-gradient(135deg, #e04b68, #b82342);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 6px 18px rgba(224, 75, 104, 0.3);
     }
 
     /* ==========================================================================
@@ -871,16 +895,18 @@
         font-size: 1.02rem;
       }
 
-      .sound-toggle-btn {
+      .top-nav-bar {
         top: 12px;
+        left: 12px;
         right: 12px;
-        padding: 6px 12px;
+      }
+
+      .nav-btn {
+        padding: 6px 11px;
         font-size: 0.75rem;
       }
 
-      .switch-page-btn {
-        top: 12px;
-        left: 12px;
+      .sound-toggle-btn {
         padding: 6px 12px;
         font-size: 0.75rem;
       }
@@ -904,17 +930,29 @@
   <div class="sunbeam-ambient sunbeam-1"></div>
   <div class="sunbeam-ambient sunbeam-2"></div>
 
-  <!-- Switch to Good Night Page Button -->
-  <a href="night.html" class="switch-page-btn" title="View Good Night Wish">
-    <span>🌙</span>
-    <span>Night Page</span>
-  </a>
+  <!-- Top Navigation Bar (Morning / Night / Sorry) & Sound Toggle -->
+  <header class="top-nav-bar">
+    <nav class="nav-links-group" aria-label="Page Navigation">
+      <a href="index.html" class="nav-btn active" title="View Morning Wish">
+        <span>🌅</span>
+        <span>Morning</span>
+      </a>
+      <a href="night.html" class="nav-btn" title="View Night Wish">
+        <span>🌙</span>
+        <span>Night</span>
+      </a>
+      <a href="sorry.html" class="nav-btn" title="View Apology Page">
+        <span>🥺</span>
+        <span>Sorry</span>
+      </a>
+    </nav>
 
-  <!-- Audio Sound Toggle -->
-  <button class="sound-toggle-btn" id="sound-btn" title="Toggle gentle romantic chime">
-    <span class="sound-icon-pulse" id="sound-icon">✨</span>
-    <span id="sound-text">Chime: On</span>
-  </button>
+    <!-- Audio Sound Toggle -->
+    <button class="sound-toggle-btn" id="sound-btn" title="Toggle gentle romantic chime">
+      <span class="sound-icon-pulse" id="sound-icon">✨</span>
+      <span id="sound-text">Chime: On</span>
+    </button>
+  </header>
 
   <!-- Main Gift Card Container -->
   <main class="app-container">

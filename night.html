@@ -195,34 +195,58 @@
       }
     }
 
-    /* Navigation link to switch between morning & night */
-    .switch-page-btn {
+    /* ==========================================================================
+       TOP NAVIGATION & CONTROLS
+       ========================================================================== */
+    .top-nav-bar {
       position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 50;
-      background: rgba(22, 26, 56, 0.75);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      top: 18px;
+      left: 18px;
+      right: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 60;
+      pointer-events: none;
+    }
+
+    .nav-links-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      pointer-events: auto;
+    }
+
+    .nav-btn {
+      background: rgba(22, 26, 56, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border: 1px solid var(--glass-border);
       border-radius: var(--radius-full);
-      padding: 8px 16px;
+      padding: 8px 14px;
       font-size: 0.82rem;
       font-weight: 600;
-      color: #ff9fb4;
+      color: var(--text-muted);
       text-decoration: none;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 6px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
       transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    .switch-page-btn:hover {
-      transform: translateY(-2px) scale(1.03);
-      background: rgba(30, 36, 75, 0.95);
-      color: #fff;
-      box-shadow: 0 8px 25px rgba(255, 117, 143, 0.3);
+    .nav-btn:hover {
+      transform: translateY(-2px) scale(1.04);
+      background: rgba(35, 42, 85, 0.95);
+      color: var(--lavender-light);
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+    }
+
+    .nav-btn.active {
+      background: linear-gradient(135deg, #7c3aed, #4c1d95);
+      color: #ffffff;
+      border-color: rgba(167, 139, 250, 0.6);
+      box-shadow: 0 6px 18px rgba(124, 58, 237, 0.4);
     }
 
     /* ==========================================================================
@@ -825,16 +849,18 @@
         font-size: 1.02rem;
       }
 
-      .sound-toggle-btn {
+      .top-nav-bar {
         top: 12px;
+        left: 12px;
         right: 12px;
-        padding: 6px 12px;
+      }
+
+      .nav-btn {
+        padding: 6px 11px;
         font-size: 0.75rem;
       }
 
-      .switch-page-btn {
-        top: 12px;
-        left: 12px;
+      .sound-toggle-btn {
         padding: 6px 12px;
         font-size: 0.75rem;
       }
@@ -858,17 +884,29 @@
   <div class="night-ambient night-ambient-1"></div>
   <div class="night-ambient night-ambient-2"></div>
 
-  <!-- Switch to Morning Wish button -->
-  <a href="index.html" class="switch-page-btn" title="View Morning Wish">
-    <span>🌅</span>
-    <span>Morning Page</span>
-  </a>
+  <!-- Top Navigation Bar (Morning / Night / Sorry) & Sound Toggle -->
+  <header class="top-nav-bar">
+    <nav class="nav-links-group" aria-label="Page Navigation">
+      <a href="index.html" class="nav-btn" title="View Morning Wish">
+        <span>🌅</span>
+        <span>Morning</span>
+      </a>
+      <a href="night.html" class="nav-btn active" title="View Night Wish">
+        <span>🌙</span>
+        <span>Night</span>
+      </a>
+      <a href="sorry.html" class="nav-btn" title="View Apology Page">
+        <span>🥺</span>
+        <span>Sorry</span>
+      </a>
+    </nav>
 
-  <!-- Audio Sound Toggle -->
-  <button class="sound-toggle-btn" id="sound-btn" title="Toggle peaceful lullaby chime">
-    <span class="sound-icon-pulse" id="sound-icon">✨</span>
-    <span id="sound-text">Chime: On</span>
-  </button>
+    <!-- Audio Sound Toggle -->
+    <button class="sound-toggle-btn" id="sound-btn" title="Toggle peaceful lullaby chime">
+      <span class="sound-icon-pulse" id="sound-icon">✨</span>
+      <span id="sound-text">Chime: On</span>
+    </button>
+  </header>
 
   <!-- Main Gift Card Container -->
   <main class="app-container">
