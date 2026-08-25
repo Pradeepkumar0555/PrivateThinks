@@ -16,10 +16,15 @@
   <!-- High-speed non-blocking Google Fonts with fallback -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
   <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
   </noscript>
 
   <style>
@@ -161,9 +166,17 @@
     }
 
     @keyframes floatAura {
-      0% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(40px, 30px) scale(1.08); }
-      100% { transform: translate(-30px, 40px) scale(0.96); }
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(40px, 30px) scale(1.08);
+      }
+
+      100% {
+        transform: translate(-30px, 40px) scale(0.96);
+      }
     }
 
     /* Sound Toggle Button (Floating Top Right) */
@@ -201,8 +214,15 @@
     }
 
     @keyframes soundPulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.22); }
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.22);
+      }
     }
 
     /* ==========================================================================
@@ -248,6 +268,7 @@
         opacity: 0;
         transform: translateY(35px) scale(0.96);
       }
+
       100% {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -280,8 +301,17 @@
     }
 
     @keyframes gentlePulse {
-      0%, 100% { transform: scale(1); box-shadow: 0 4px 14px rgba(230, 57, 70, 0.1); }
-      50% { transform: scale(1.03); box-shadow: 0 6px 20px rgba(230, 57, 70, 0.2); }
+
+      0%,
+      100% {
+        transform: scale(1);
+        box-shadow: 0 4px 14px rgba(230, 57, 70, 0.1);
+      }
+
+      50% {
+        transform: scale(1.03);
+        box-shadow: 0 6px 20px rgba(230, 57, 70, 0.2);
+      }
     }
 
     .ear-hold-icon {
@@ -291,9 +321,19 @@
     }
 
     @keyframes earWiggle {
-      0%, 100% { transform: rotate(0deg); }
-      25% { transform: rotate(-10deg); }
-      75% { transform: rotate(10deg); }
+
+      0%,
+      100% {
+        transform: rotate(0deg);
+      }
+
+      25% {
+        transform: rotate(-10deg);
+      }
+
+      75% {
+        transform: rotate(10deg);
+      }
     }
 
     /* ==========================================================================
@@ -456,8 +496,17 @@
     }
 
     @keyframes voicePulse {
-      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.45); }
-      50% { transform: scale(1.12); box-shadow: 0 0 0 12px rgba(230, 57, 70, 0); }
+
+      0%,
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.45);
+      }
+
+      50% {
+        transform: scale(1.12);
+        box-shadow: 0 0 0 12px rgba(230, 57, 70, 0);
+      }
     }
 
     .voice-details {
@@ -497,15 +546,36 @@
       transition: height 0.2s ease;
     }
 
-    .voice-note-card.playing .wave-bar:nth-child(1) { animation: soundWave 0.6s infinite alternate ease-in-out; }
-    .voice-note-card.playing .wave-bar:nth-child(2) { animation: soundWave 0.8s infinite alternate 0.15s ease-in-out; }
-    .voice-note-card.playing .wave-bar:nth-child(3) { animation: soundWave 0.5s infinite alternate 0.3s ease-in-out; }
-    .voice-note-card.playing .wave-bar:nth-child(4) { animation: soundWave 0.7s infinite alternate 0.2s ease-in-out; }
-    .voice-note-card.playing .wave-bar:nth-child(5) { animation: soundWave 0.9s infinite alternate 0.4s ease-in-out; }
+    .voice-note-card.playing .wave-bar:nth-child(1) {
+      animation: soundWave 0.6s infinite alternate ease-in-out;
+    }
+
+    .voice-note-card.playing .wave-bar:nth-child(2) {
+      animation: soundWave 0.8s infinite alternate 0.15s ease-in-out;
+    }
+
+    .voice-note-card.playing .wave-bar:nth-child(3) {
+      animation: soundWave 0.5s infinite alternate 0.3s ease-in-out;
+    }
+
+    .voice-note-card.playing .wave-bar:nth-child(4) {
+      animation: soundWave 0.7s infinite alternate 0.2s ease-in-out;
+    }
+
+    .voice-note-card.playing .wave-bar:nth-child(5) {
+      animation: soundWave 0.9s infinite alternate 0.4s ease-in-out;
+    }
 
     @keyframes soundWave {
-      0% { height: 4px; background: #ff8fa3; }
-      100% { height: 16px; background: #e63946; }
+      0% {
+        height: 4px;
+        background: #ff8fa3;
+      }
+
+      100% {
+        height: 16px;
+        background: #e63946;
+      }
     }
 
     .voice-play-btn {
@@ -634,8 +704,15 @@
     }
 
     @keyframes popIn {
-      0% { opacity: 0; transform: scale(0.88); }
-      100% { opacity: 1; transform: scale(1); }
+      0% {
+        opacity: 0;
+        transform: scale(0.88);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
     .forgiveness-reveal h3 {
@@ -805,8 +882,15 @@
     }
 
     @keyframes pulseGlow {
-      0%, 100% { box-shadow: 0 10px 25px rgba(230, 57, 70, 0.32), 0 0 0 0 rgba(255, 117, 143, 0.4); }
-      50% { box-shadow: 0 12px 30px rgba(230, 57, 70, 0.45), 0 0 0 10px rgba(255, 117, 143, 0); }
+
+      0%,
+      100% {
+        box-shadow: 0 10px 25px rgba(230, 57, 70, 0.32), 0 0 0 0 rgba(255, 117, 143, 0.4);
+      }
+
+      50% {
+        box-shadow: 0 12px 30px rgba(230, 57, 70, 0.45), 0 0 0 10px rgba(255, 117, 143, 0);
+      }
     }
 
     .surprise-btn:hover {
@@ -859,8 +943,13 @@
     }
 
     @keyframes sealPop {
-      0% { transform: scale(0) rotate(-45deg); }
-      100% { transform: scale(1) rotate(0deg); }
+      0% {
+        transform: scale(0) rotate(-45deg);
+      }
+
+      100% {
+        transform: scale(1) rotate(0deg);
+      }
     }
 
     .secret-header {
@@ -981,7 +1070,8 @@
         width: 100%;
       }
 
-      .forgive-btn, .angry-btn {
+      .forgive-btn,
+      .angry-btn {
         width: 100%;
         justify-content: center;
       }
@@ -1028,7 +1118,8 @@
     <article class="glass-card">
 
       <!-- Apology Status Pill (Clickable Voice Trigger) -->
-      <div class="sorry-pill" id="sorry-status-pill" onclick="playSorryVoice()" title="Tap to hear: Sorry Sorry Sorry... 🎙️">
+      <div class="sorry-pill" id="sorry-status-pill" onclick="playSorryVoice()"
+        title="Tap to hear: Sorry Sorry Sorry... 🎙️">
         <span class="ear-hold-icon">🥺</span>
         <span id="header-badge">Holding my ears • Tap to hear "Sorry..." 🎙️</span>
       </div>
@@ -1048,10 +1139,13 @@
         <div class="apology-message-card">
           <div class="apology-message" id="apology-body">
             <p>
-              Mera Bacha, I know yesterday my reaction was completely unnecessary and wrong. Maine bina soche samjhe overreact kar diya, aur aapko hurt kiya. When I realized ki aap naraj ho aur call ya message ka reply nahi kar rahe, mera dil bilkul bechain ho gaya.
+              Mera Bacha, I know yesterday my reaction was completely unnecessary and wrong. Maine bina soche samjhe
+              overreact kar diya.
             </p>
             <p>
-              Aapko mujh par gussa hone ka pura haq hai, aur main apni galti dil se maanta hoon. Meri koi bhi baat ya mood aapki smile se zyada important nahi ho sakta. Your voice and your presence mean everything to me. Please itni der chup mat raho na, I miss you so much! 🥺❤️
+              Aapko mujh par gussa hone ka pura haq hai, aur main apni galti dil se maanta hoon. Meri koi bhi baat ya
+              mood aapki smile se zyada important nahi ho sakta. Your voice and your presence mean everything to me.
+              Please itni der chup mat raho na, I miss you so much! 🥺❤️
             </p>
           </div>
         </div>
@@ -1059,7 +1153,8 @@
         <!-- Highlighted Emotional Quote -->
         <div class="highlight-quote-card">
           <div class="highlight-quote-text" id="highlight-quote">
-            “Gussa karne ka pura haq hai aapko, par itna naraj mat raho ki dil bechain ho jaye... Please maan jao na, Beta? 🥺❤️”
+            “Gussa karne ka pura haq hai aapko, par itna naraj mat raho ki dil bechain ho jaye... Please maan jao na,
+            Beta? 🥺❤️”
           </div>
         </div>
 
@@ -1111,7 +1206,8 @@
         <div class="forgiveness-reveal" id="forgiveness-reveal">
           <h3>Yayyy! Thank You, Mera Bacha! 🥰🎉</h3>
           <p id="forgiveness-text">
-            Aapki smile wapas aane se meri duniya me phir se roshni ho gayi! I promise to always listen to you, understand you, and love you more every single day. You are the best thing in my life! ❤️✨
+            Aapki smile wapas aane se meri duniya me phir se roshni ho gayi! I promise to always listen to you,
+            understand you, and love you more every single day. You are the best thing in my life! ❤️✨
           </p>
         </div>
       </section>
@@ -1122,7 +1218,8 @@
         <p class="section-subtitle">Things I promise to do every single day for my favorite person:</p>
 
         <div class="promises-grid">
-          <div class="promise-card" onclick="triggerAffirmation('🌸 Promise 1: I will always pause, breathe, and speak with calm love.', event)">
+          <div class="promise-card"
+            onclick="triggerAffirmation('🌸 Promise 1: I will always pause, breathe, and speak with calm love.', event)">
             <div class="promise-icon">🌸</div>
             <div class="promise-content">
               <h4>1. No More Overreacting</h4>
@@ -1130,7 +1227,8 @@
             </div>
           </div>
 
-          <div class="promise-card" onclick="triggerAffirmation('🧸 Promise 2: Your feelings will always come before any argument.', event)">
+          <div class="promise-card"
+            onclick="triggerAffirmation('🧸 Promise 2: Your feelings will always come before any argument.', event)">
             <div class="promise-icon">🧸</div>
             <div class="promise-content">
               <h4>2. Your Happiness First</h4>
@@ -1138,7 +1236,8 @@
             </div>
           </div>
 
-          <div class="promise-card" onclick="triggerAffirmation('👂 Promise 3: Kaan pakad ke maafi — 100% honesty and care.', event)">
+          <div class="promise-card"
+            onclick="triggerAffirmation('👂 Promise 3: Kaan pakad ke maafi — 100% honesty and care.', event)">
             <div class="promise-icon">👂</div>
             <div class="promise-content">
               <h4>3. Genuine Listening</h4>
@@ -1146,7 +1245,8 @@
             </div>
           </div>
 
-          <div class="promise-card" onclick="triggerAffirmation('🍫 Promise 4: Unlimited treats, favorite food, and endless pampering!', event)">
+          <div class="promise-card"
+            onclick="triggerAffirmation('🍫 Promise 4: Unlimited treats, favorite food, and endless pampering!', event)">
             <div class="promise-icon">🍫</div>
             <div class="promise-content">
               <h4>4. Pampering & Treats</h4>
@@ -1154,7 +1254,8 @@
             </div>
           </div>
 
-          <div class="promise-card" onclick="triggerAffirmation('❤️ Promise 5: Always by your side, through every mood and day.', event)">
+          <div class="promise-card"
+            onclick="triggerAffirmation('❤️ Promise 5: Always by your side, through every mood and day.', event)">
             <div class="promise-icon">❤️</div>
             <div class="promise-content">
               <h4>5. Forever Yours</h4>
@@ -1177,7 +1278,8 @@
             <div class="wax-seal">💌</div>
             <h2 class="secret-header">A Pinky Promise To You</h2>
             <p class="secret-message" id="surprise-message">
-              "I hate being the reason behind your silence or tears. I promise to be the person who brings peace, laughter, and endless comfort to your life. You mean the entire world to me, Beta."
+              "I hate being the reason behind your silence or tears. I promise to be the person who brings peace,
+              laughter, and endless comfort to your life. You mean the entire world to me, Beta."
             </p>
             <p class="secret-signoff" id="surprise-signoff">
               Please call or message me once you read this? Waiting eagerly... 🥺❤️
@@ -1191,16 +1293,20 @@
 
         <!-- 4 Quick Interactive Care Buttons with Voice Integration -->
         <div class="action-pills-row">
-          <button class="action-pill" onclick="playSorryVoice('10,000 warm bear hugs dispatched for you, my angel!'); triggerAffirmation('🧸 Sending you 10,000 warm, tight bear hugs right now! 🥰', event)">
+          <button class="action-pill"
+            onclick="playSorryVoice('10,000 warm bear hugs dispatched for you, my angel!'); triggerAffirmation('🧸 Sending you 10,000 warm, tight bear hugs right now! 🥰', event)">
             <span>🧸</span> Warm Bear Hug
           </button>
-          <button class="action-pill" onclick="playSorryVoice('Sorry... sorry... sorry... Kaan pakad ke sorry bol raha hoon... Ab to maan jao na!'); triggerAffirmation('🥺 Kaan pakad ke sorry bol raha hoon... Ab to muskura do na! 🎙️', event)">
+          <button class="action-pill"
+            onclick="playSorryVoice('Sorry... sorry... sorry... Kaan pakad ke sorry bol raha hoon... Ab to maan jao na!'); triggerAffirmation('🥺 Kaan pakad ke sorry bol raha hoon... Ab to muskura do na! 🎙️', event)">
             <span>👂</span> Kaan Pakad Ke Sorry 🎙️
           </button>
-          <button class="action-pill" onclick="playSorryVoice('A box of sweet chocolates for my favorite person!'); triggerAffirmation('🍫 A box of your favorite chocolates to sweeten your mood! 🍬', event)">
+          <button class="action-pill"
+            onclick="playSorryVoice('A box of sweet chocolates for my favorite person!'); triggerAffirmation('🍫 A box of your favorite chocolates to sweeten your mood! 🍬', event)">
             <span>🍫</span> Sweet Treat
           </button>
-          <button class="action-pill" onclick="playSorryVoice('Sending a gentle, caring kiss on your forehead!'); triggerAffirmation('😘 Sending a gentle, caring kiss on your forehead! ❤️', event)">
+          <button class="action-pill"
+            onclick="playSorryVoice('Sending a gentle, caring kiss on your forehead!'); triggerAffirmation('😘 Sending a gentle, caring kiss on your forehead! ❤️', event)">
             <span>💋</span> Forehead Kiss
           </button>
         </div>
@@ -1465,12 +1571,12 @@
         window.speechSynthesis.cancel();
 
         const utterance = new SpeechSynthesisUtterance(textToSpeak);
-        
+
         // Voice selection
         const voices = window.speechSynthesis.getVoices();
-        const preferredVoice = voices.find(v => v.lang.includes('hi') || v.lang.includes('IN')) || 
-                               voices.find(v => v.lang.startsWith('en')) || 
-                               voices[0];
+        const preferredVoice = voices.find(v => v.lang.includes('hi') || v.lang.includes('IN')) ||
+          voices.find(v => v.lang.startsWith('en')) ||
+          voices[0];
         if (preferredVoice) utterance.voice = preferredVoice;
 
         utterance.pitch = 1.15; // slightly sweet, gentle pitch
