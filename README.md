@@ -1,69 +1,74 @@
-# 🥺 Sincere Apology & "Please Maan Jao" Digital Gift ❤️
+# 🎂 Happy Birthday, Dearest Auntie! ✨ Royal Birthday Wishes Web App 💖
 
-A deeply heartfelt, romantic single-page website created with love for your girlfriend / partner (**Beta**). Designed with luxurious warm velvet rose-peach glassmorphism, interactive "Sorry... Sorry... Sorry..." voice playback, celebration confetti, Web Audio calming piano chimes, and an unfolding pinky promise letter.
+A luxurious, elegant, and heartfelt single-page birthday celebration website designed specially for your **Auntie** (Chachi Ji, Mami Ji, Bua Ji, Maasi Ji, or any beloved elder). 
 
----
-
-## 🔗 Live URL (Direct on `main` branch)
-
-When hosted on GitHub Pages:
-
-- **Root URL**: `https://pradeepkumar0555.github.io/myfavouritethought/`
-- **With Custom Name / From**: `https://pradeepkumar0555.github.io/myfavouritethought/?name=Beta&from=Pradeep`
+Designed with a warm Champagne Rose Gold theme, interactive 3D birthday cake with candle-blowing animation, synthesized voice greeting, Web Audio celebratory melody, unfolding vintage wax-sealed letter, and confetti celebration.
 
 ---
 
-## ✨ Features
+## 🔗 Live URL (GitHub Pages)
 
-### 🎙️ Interactive Voice Note Player
-- Live animated soundwaves.
-- Speaks sweet, emotional voice: *"Sorry... sorry... sorry... Please maan jao na, Mera Bacha... I am really very sorry! 🥺❤️"*.
-- Triggerable via Voice Player Card, Ear-Holding Pill, Kaan Pakad Ke Sorry Button, and "Thoda Aur Manao" Button!
-
-### 🌸 Warm Rose-Peach Glassmorphism Design
-- Ambient blurred light orbs and soothing palette.
-- Canvas animation with floating glowing hearts, sakura petals, and golden sparkles.
-- Web Audio calming acoustic piano progression.
-
-### 🤞 "Will You Forgive Me?" Decision Widget
-- **"Haan, Maan Gayi!"**: Launches joyful celebration confetti shower 🎉 with happy chime and sweet loving gratitude.
-- **"Thoda Aur Manao!"**: Playful voice & toast excuses (e.g. 50,000 warm virtual hugs, unlimited chocolate parcel, ear-holding apologies).
-
-### 📜 5 Sincere Promises
-- 1. No More Overreacting (Pause, breathe & speak with love).
-- 2. Your Happiness First.
-- 3. Genuine Listening.
-- 4. Pampering & Treats.
-- 5. Forever Yours.
-
-### 🧸 Virtual Hugs & Care Row
-- 🧸 10,000 Warm Bear Hugs
-- 👂 Kaan Pakad Ke Sorry (with Voice)
-- 🍫 Sweet Chocolates Treat
-- 💋 Forehead Kiss
-
-### 💌 3D Wax Seal Promise Note
-- Tap to unfold a heartfelt pinky promise letter with wax seal animation.
+- **Default Birthday Wish**: `https://pradeepkumar0555.github.io/myfavouritethought/`
+- **Customized Name & Sender**: `https://pradeepkumar0555.github.io/myfavouritethought/?name=Dear+Auntie&from=Pradeep`
+- **For Chachi Ji / Mami Ji / Bua Ji**: `https://pradeepkumar0555.github.io/myfavouritethought/?name=Chachi+Ji&from=Pradeep`
 
 ---
 
-## 💌 How to Personalize via URL
+## ✨ Interactive Features
 
-- `?name=` : Her name (e.g. `Beta`, `Mera Bacha`, `Jaan`)
-- `?from=` : Your name (e.g. `Pradeep`, `Yours Always`)
-- `?voice=` : Custom spoken voice message
-- `?quote=` : Custom quote line
-- `?surprise=` : Custom surprise letter text
+### 🎂 1. 3D Birthday Cake & Candle Blow
+- Multi-tier strawberry cream cake with 3 animated flickering candle flames.
+- Tap **"Blow Candles & Celebrate!"** to blow out the candles, trigger candle smoke, and launch an explosion of celebratory confetti & victory audio chords!
+
+### 🎙️ 2. Spoken Birthday Audio Greeting (Web Speech API)
+- Tap **"🔊 Play Voice"** to hear a warm, respectful birthday wish spoken aloud.
+- Dynamically includes Auntie's name and the sender's name.
+
+### 🎵 3. Celebratory Background Harmony (Web Audio API)
+- Pure browser-synthesized acoustic harp & piano chord progression (works offline with 0 external sound files).
+- Interactive soundwave visualizer in the top toolbar.
+
+### 💌 4. Unfolding Vintage Wax-Sealed Letter
+- 3D envelope with a royal wax seal.
+- Tap to unfold an emotional, handwritten letter thanking Auntie for her endless love, delicious cooking, warm hospitality, and guiding blessings.
+
+### 🌟 5. 5 Pillars of Love & Admiration Cards
+- 💖 Heart of Pure Gold
+- 🌸 Grace, Poise & Strength
+- 🍲 The Queen of Flavors & Warmth
+- 🌟 Our Constant Cheerleader
+- 🪔 Endless Prayers for Longevity & Health
+
+### 🎁 6. Virtual Surprises & Live Reaction Bursts
+- Unbox 💐 Royal Flower Bouquets, 👑 Golden #1 Auntie Crown, 🍫 Gourmet Sweets, and 🪔 Divine Blessings.
+- Floating emoji physics bursts on screen with live counter tallies.
+
+### 💬 7. One-Click WhatsApp Sharing & Link Customizer
+- Direct WhatsApp share button with pre-filled lovely birthday message and personalized link.
+- In-page personalization modal to quickly customize Auntie's title, sender name, quote, and letter text.
 
 ---
 
-## 🚀 How to Deploy on GitHub Pages
+## 💌 URL Customization Parameters
+
+You can easily customize the webpage simply by appending parameters to the URL:
+
+| Parameter | Example Value | Description |
+| :--- | :--- | :--- |
+| `name` or `to` | `?name=Auntie+Ji` or `?name=Chachi+Ji` | The name or title displayed throughout the page |
+| `from` | `?from=Pradeep+%26+Family` | Your name / family signature on the letter |
+| `quote` | `?quote=Wishing+you+the+best+year+ahead!` | Custom top blessing quote |
+| `msg` | `?msg=Custom+letter+text...` | Custom message in the unfolding vintage letter |
+
+---
+
+## 🚀 How to Deploy / Push Updates
 
 1. Commit and push:
    ```bash
    git add .
-   git commit -m "Set standalone Sincere Apology page as root index.html"
+   git commit -m "Create single-page luxury Birthday celebration for Auntie"
    git push origin main
    ```
 2. In GitHub **Settings** > **Pages** > Select branch `main` and root `/` > Click **Save**.
-3. Live instantly at `https://pradeepkumar0555.github.io/myfavouritethought/`!
+3. Live instantly at your GitHub Pages URL!
