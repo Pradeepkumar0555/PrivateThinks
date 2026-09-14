@@ -2164,6 +2164,13 @@
     // Initial setup
     applyPersonalization();
     applyPreset(currentPresetKey);
+
+    // Clean / mask the browser address bar on load so visitors see the clean 'Click Here' label
+    try {
+      if (window.history && window.history.replaceState && window.location.protocol !== 'file:') {
+        window.history.replaceState(null, document.title, window.location.pathname + '#Click-Here-To-Open-Divine-Aarti-&-Darshan');
+      }
+    } catch (e) {}
   </script>
 </body>
 
