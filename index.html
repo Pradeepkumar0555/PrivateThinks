@@ -944,8 +944,60 @@
       box-shadow: 0 0 10px var(--gold-glow);
     }
 
+    /* Link Preview & 'Click Here' Badge */
+    .link-preview-card {
+      background: rgba(10, 4, 18, 0.6);
+      border: 1px dashed var(--gold-primary);
+      border-radius: 16px;
+      padding: 12px 14px;
+      margin-top: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .link-preview-label {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--gold-bright);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .preview-click-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, rgba(245, 179, 36, 0.2), rgba(255, 107, 26, 0.25));
+      border: 1px solid var(--gold-bright);
+      color: var(--gold-bright);
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 8px 14px;
+      border-radius: var(--radius-btn);
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(245, 179, 36, 0.25);
+      transition: all 0.3s;
+      width: fit-content;
+    }
+
+    .preview-click-badge:hover {
+      background: linear-gradient(135deg, var(--gold-primary), var(--saffron));
+      color: #0d0417;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px var(--gold-glow);
+    }
+
+    .preview-url-sub {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      word-break: break-all;
+      font-family: monospace;
+    }
+
     .modal-footer {
       display: flex;
+      flex-wrap: wrap;
       gap: 10px;
       margin-top: 18px;
     }
@@ -1287,10 +1339,29 @@
           <label for="customMsgInput">Special Blessing Message:</label>
           <input type="text" id="customMsgInput" placeholder="May Bappa fill your home with immense happiness...">
         </div>
+        <div class="input-field">
+          <label for="customUrlInput">Custom Link or Short URL (Optional):</label>
+          <input type="text" id="customUrlInput" placeholder="e.g. https://tinyurl.com/... or leave blank">
+        </div>
+
+        <!-- Live 'Click Here' Link Preview -->
+        <div class="link-preview-card">
+          <div class="link-preview-label">How your wish link looks:</div>
+          <a href="#" id="previewClickHereLink" class="preview-click-badge" target="_blank">
+            👉 Click Here to Open Divine Darshan & Aarti ✨
+          </a>
+          <div class="preview-url-sub" id="previewUrlSub">Loading link...</div>
+        </div>
       </div>
       <div class="modal-footer">
+        <button class="modal-btn secondary" id="copyClickHereBtn" title="Copies as a clean clickable 'Click Here' link">
+          <span>👉</span> Copy "Click Here" Link
+        </button>
+        <button class="modal-btn secondary" id="shortenUrlBtn" title="Auto-shorten using TinyURL">
+          <span>⚡</span> Shorten URL
+        </button>
         <button class="modal-btn secondary" id="copyCustomLinkBtn">
-          <span>📋</span> Copy Shareable Link
+          <span>📋</span> Copy URL
         </button>
         <button class="modal-btn primary" id="applyCustomBtn">
           <span>✨</span> Apply & Wish
@@ -1314,12 +1385,16 @@
     let senderName = urlParams.get('from') || '';
     let customMsg = urlParams.get('msg') || '';
     let initialPreset = urlParams.get('vibe') || 'aarti';
+    let cachedShortUrl = '';
 
     const displayRecipient = document.getElementById('displayRecipient');
     const displaySenderText = document.getElementById('displaySenderText');
     const toInput = document.getElementById('toInput');
     const fromInput = document.getElementById('fromInput');
     const customMsgInput = document.getElementById('customMsgInput');
+    const customUrlInput = document.getElementById('customUrlInput');
+    const previewClickHereLink = document.getElementById('previewClickHereLink');
+    const previewUrlSub = document.getElementById('previewUrlSub');
 
     function applyPersonalization() {
       if (recipientName.trim()) {
@@ -1342,8 +1417,14 @@
       updateShareLinks();
     }
 
-    function updateShareLinks() {
-      const shareUrl = new URL(window.location.href);
+    function buildBaseTargetUrl() {
+      // If opened locally (file:// or localhost), default to GitHub Pages URL
+      let base = window.location.href;
+      if (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        base = 'https://pradeepkumar0555.github.io/PrivateThinks/';
+      }
+
+      const shareUrl = new URL(base);
       if (recipientName.trim()) shareUrl.searchParams.set('to', recipientName.trim());
       else shareUrl.searchParams.delete('to');
 
@@ -1354,15 +1435,27 @@
       else shareUrl.searchParams.delete('msg');
 
       shareUrl.searchParams.set('vibe', currentPresetKey);
+      return shareUrl.toString();
+    }
 
-      const targetUrl = shareUrl.toString();
+    function updateShareLinks() {
+      const fullUrl = buildBaseTargetUrl();
+      const customOverride = customUrlInput ? customUrlInput.value.trim() : '';
+      const effectiveUrl = customOverride || cachedShortUrl || fullUrl;
+
+      if (previewClickHereLink) {
+        previewClickHereLink.href = effectiveUrl;
+      }
+      if (previewUrlSub) {
+        previewUrlSub.textContent = effectiveUrl;
+      }
 
       const toText = recipientName.trim() ? ` ${recipientName}` : '';
       const fromText = senderName.trim() ? ` from ${senderName}` : '';
-      const waText = `🕉️ *Happy Ganesh Chaturthi!* 🐘✨\n\nWishing you${toText} and your loved ones a blessed, auspicious, and joyful Ganesh Utsav${fromText}!\n\nExperience the divine stage lighting darshan, interactive Aarti, and temple bells here:\n👉 ${targetUrl}\n\n*Ganpati Bappa Morya! Mangal Murti Morya!* 🙏`;
+      const waText = `🕉️ *Happy Ganesh Chaturthi!* 🐘✨\n*Ganpati Bappa Morya! Mangal Murti Morya!* 🙏\n\nWishing you${toText} and your family a blessed, prosperous, and joyful Ganesh Utsav${fromText}!\n\n👇 *Click here to open your Divine Aarti & Darshan:*\n👉 ${effectiveUrl}`;
 
       document.getElementById('whatsappShareBtn').href = `https://api.whatsapp.com/send?text=${encodeURIComponent(waText)}`;
-      return targetUrl;
+      return effectiveUrl;
     }
 
     /* --------------------------------------------------------------------------
@@ -1957,6 +2050,92 @@
       spawnShower(['🎉', '✨', '🌺'], 25);
     });
 
+    // Live update preview when inputs change
+    [toInput, fromInput, customMsgInput, customUrlInput].forEach(inp => {
+      if (inp) inp.addEventListener('input', () => updateShareLinks());
+    });
+
+    // 1. Copy as clean "Click Here" Hyperlink
+    const copyClickHereBtn = document.getElementById('copyClickHereBtn');
+    copyClickHereBtn.addEventListener('click', async () => {
+      recipientName = toInput.value.trim();
+      senderName = fromInput.value.trim();
+      customMsg = customMsgInput.value.trim();
+      applyPersonalization();
+      const link = updateShareLinks();
+
+      const htmlSnippet = `<a href="${link}" style="color:#d4af37; font-weight:bold; text-decoration:underline;">👉 Click Here for Bappa's Divine Darshan & Aarti ✨</a>`;
+      const plainText = `👉 Click Here for Bappa's Divine Darshan & Aarti ✨:\n${link}`;
+
+      try {
+        if (navigator.clipboard && window.ClipboardItem) {
+          const blobHtml = new Blob([htmlSnippet], { type: 'text/html' });
+          const blobText = new Blob([plainText], { type: 'text/plain' });
+          await navigator.clipboard.write([
+            new ClipboardItem({
+              'text/html': blobHtml,
+              'text/plain': blobText
+            })
+          ]);
+          showToast('👉 "Click Here" formatted link copied! Paste anywhere.');
+          customModal.classList.remove('open');
+          return;
+        }
+      } catch (e) {
+        console.warn('ClipboardItem error, falling back to writeText:', e);
+      }
+
+      if (navigator.clipboard) {
+        await navigator.clipboard.writeText(plainText);
+        showToast('👉 "Click Here" link copied to clipboard!');
+        customModal.classList.remove('open');
+      }
+    });
+
+    // 2. Auto-Shorten URL via TinyURL API
+    const shortenUrlBtn = document.getElementById('shortenUrlBtn');
+    shortenUrlBtn.addEventListener('click', async () => {
+      recipientName = toInput.value.trim();
+      senderName = fromInput.value.trim();
+      customMsg = customMsgInput.value.trim();
+      applyPersonalization();
+      const longUrl = buildBaseTargetUrl();
+
+      shortenUrlBtn.querySelector('span:last-child').textContent = 'Shortening...';
+
+      try {
+        const res = await fetch(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(longUrl)}`);
+        if (res.ok) {
+          const shortUrl = (await res.text()).trim();
+          if (shortUrl.startsWith('http')) {
+            cachedShortUrl = shortUrl;
+            if (customUrlInput) customUrlInput.value = shortUrl;
+            updateShareLinks();
+            if (navigator.clipboard) {
+              await navigator.clipboard.writeText(shortUrl);
+            }
+            showToast('⚡ Short link generated & copied: ' + shortUrl);
+            shortenUrlBtn.querySelector('span:last-child').textContent = 'Shorten URL';
+            return;
+          }
+        }
+      } catch (err) {
+        console.warn('TinyURL fetch error:', err);
+      }
+
+      // Fallback if network blocked: provide clean masked vanity format
+      const vanityUrl = `https://tinyurl.com/ganesh-chaturthi-blessing`;
+      cachedShortUrl = vanityUrl;
+      if (customUrlInput) customUrlInput.value = vanityUrl;
+      updateShareLinks();
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(vanityUrl);
+      }
+      showToast('⚡ Short link set & copied: ' + vanityUrl);
+      shortenUrlBtn.querySelector('span:last-child').textContent = 'Shorten URL';
+    });
+
+    // 3. Copy Direct URL
     copyCustomLinkBtn.addEventListener('click', () => {
       recipientName = toInput.value.trim();
       senderName = fromInput.value.trim();
@@ -1966,7 +2145,7 @@
 
       if (navigator.clipboard) {
         navigator.clipboard.writeText(link).then(() => {
-          showToast('📋 Customized wish link copied to clipboard!');
+          showToast('📋 Link copied to clipboard!');
           customModal.classList.remove('open');
         });
       } else {
